@@ -16,13 +16,10 @@ public class JpaMain {
         tx.begin();
 
         try {
-            //영속
-            Member member = new Member(200L, "member200");
+            Member member = new Member();
+            member.setUsername("D");
+
             em.persist(member);
-
-            em.flush();
-
-            System.out.println("=================");
 
             tx.commit();
         } catch (Exception e) {
